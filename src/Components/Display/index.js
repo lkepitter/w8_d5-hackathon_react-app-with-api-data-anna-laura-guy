@@ -1,13 +1,13 @@
 import React from 'react';
 import {useState, useEffect} from "react";
 
-export function Display ({props}) {
+export function Display ({search}) {
     const [character, setCharacter] = useState({})
 
     
     useEffect(()=>{
         async function getCharacter(){
-            let response = await fetch("https://the-one-api.dev/v2/character/5cd99d4bde30eff6ebccfea0",{headers: {
+            let response = await fetch(`https://the-one-api.dev/v2/character/?name=${search}`,{headers: {
                 accept: "application/json",
                 Authorization: "Bearer M_NvO75ukBdw8Ht5Bb-Z",
               }})
@@ -16,8 +16,8 @@ export function Display ({props}) {
         };
         getCharacter();
                     
-        }, []
-    );
+        }, [search]
+    ); 
 
     return (
         <div>
