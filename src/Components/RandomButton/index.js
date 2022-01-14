@@ -8,7 +8,7 @@ function Random({ handleClick }) {
     async function getRandomCharacter() {
       console.log("Random is running");
       let response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://the-one-api.dev/v2/character`,
+        `https://the-one-api.dev/v2/character/?name=`,
         {
           headers: {
             accept: "application/json",
@@ -23,7 +23,7 @@ function Random({ handleClick }) {
       setRandom(data.docs[randomNumber]);
     }
     getRandomCharacter();
-  }, [random]);
+  }, []);
 
   return (
     <div>

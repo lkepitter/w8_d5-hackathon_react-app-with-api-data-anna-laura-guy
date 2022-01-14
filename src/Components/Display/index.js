@@ -7,7 +7,7 @@ export function Display({ search }) {
   useEffect(() => {
     async function getCharacter() {
       let response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://the-one-api.dev/v2/character/?name=${search}`,
+        `https://the-one-api.dev/v2/character/?name=${search}`,
         {
           headers: {
             accept: "application/json",
