@@ -4,7 +4,7 @@ import React from "react";
 function Search({ search, handleClick }) {
   let inputValue = "";
   return (
-    <div>
+    <div className="nav">
       <input
         type="text"
         onChange={(event) => {

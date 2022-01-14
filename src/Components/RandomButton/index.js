@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-function Random({ handleClick }) {
+function Random({ handleClick, search }) {
   const [random, setRandom] = useState("");
 
   useEffect(() => {
     async function getRandomCharacter() {
-      console.log("Random is running");
       let response = await fetch(
         `https://the-one-api.dev/v2/character/?name=`,
         {
@@ -19,14 +18,15 @@ function Random({ handleClick }) {
       let data = await response.json();
       console.log(data.docs);
       //const randomNumber = Math.floor(Math.random() * 933);
-      const randomNumber = Math.floor(Math.random() * 20);
-      setRandom(data.docs[randomNumber]);
+      const randomNumber = Math.floor(Math.random() * 933);
+      setRandom(data.docs[randomNumber].name);
+      console.log(data.docs[randomNumber].name);
     }
     getRandomCharacter();
-  }, []);
+  }, [search]);
 
   return (
-    <div>
+    <div className="nav">
       <button
         onClick={() => {
           handleClick(random);

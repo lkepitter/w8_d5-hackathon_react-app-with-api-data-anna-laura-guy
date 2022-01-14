@@ -29,15 +29,20 @@ export function Display({ search }) {
   }, [search]);
 
   return (
-    <div>
+    <div className="display">
       <img
         src="https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg"
         alt="Gandalf scowling"
+        className="displayImg"
       ></img>
-      <div>
-        <p> name: {character.name}</p>
-        <p> hair: {character.hair}</p>
-        <p> </p>
+      <div className="displayText">
+        <p> Name: {character.name}</p>
+        <p> Gender: {character.gender}</p>
+        <p> Race: {character.race}</p>
+        <p> Hair: {character.hair}</p>
+        <p> Height: {character.height !== "NaN" ? character.height : ""}</p>
+        <p> DOB: {character.birth !== "NaN" ? character.birth : ""}</p>
+        <p> Location: {character.realm !== "NaN" ? character.realm : ""}</p>
       </div>
     </div>
   );

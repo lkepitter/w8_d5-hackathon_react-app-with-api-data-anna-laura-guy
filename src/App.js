@@ -14,8 +14,10 @@ function App() {
   return (
     <div className="App">
       <Display search={search}></Display>
-      <Search handleClick={handleClick}></Search>
-      <RandomButton handleClick={handleClick}></RandomButton>
+      <nav>
+        <Search handleClick={handleClick}></Search>
+        <RandomButton handleClick={handleClick} search={search}></RandomButton>
+      </nav>
     </div>
   );
 }
