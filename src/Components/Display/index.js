@@ -16,7 +16,14 @@ export function Display({ search }) {
         }
       );
       let data = await response.json();
-      setCharacter(data.docs[0]);
+      console.log(data);
+      if (data.total > 0) {
+        setCharacter(data.docs[0]);
+      } else {
+        console.log(
+          "Please input a REAL character with their FULL name. True fans will know"
+        );
+      }
     }
     getCharacter();
   }, [search]);
