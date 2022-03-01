@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import accessToken from "../../config.js"
 
 function Random({ handleClick, search }) {
   const [random, setRandom] = useState("");
@@ -11,7 +12,7 @@ function Random({ handleClick, search }) {
         {
           headers: {
             accept: "application/json",
-            Authorization: "Bearer M_NvO75ukBdw8Ht5Bb-Z",
+            Authorization: `Bearer ${accessToken}`,
           },
         }
       );
